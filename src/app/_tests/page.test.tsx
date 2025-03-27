@@ -4,5 +4,5 @@ import Home from "@/app/page";
 
 test("Page", () => {
     render(<Home />);
-    expect(screen.getByTestId("nextjs-logo")).toBeDefined();
+    expect(screen.getByTestId("homepage-title")).toBeDefined();
 });

@@ -4,6 +4,7 @@ export default function Home() {
     return (
         <div className="flex h-screen flex-col items-center justify-center">
             <Typography
+                data-testid="homepage-title"
                 weight="bold"
                 variant="body/xl"
                 responsiveVariant={{
