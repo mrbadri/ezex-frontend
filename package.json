@@ -17,7 +17,9 @@
     "format": "prettier --write .",
     "lint:fix": "next lint --fix",
     "lint-staged": "lint-staged",
-    "commit": "cz"
+    "commit": "cz",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.3",
@@ -39,9 +41,17 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3",
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
     "@eslint/eslintrc": "^3",
+    "@storybook/addon-essentials": "^8.6.9",
+    "@storybook/addon-interactions": "^8.6.9",
+    "@storybook/addon-onboarding": "^8.6.9",
+    "@storybook/blocks": "^8.6.9",
+    "@storybook/nextjs": "^8.6.9",
+    "@storybook/react": "^8.6.9",
+    "@storybook/test": "^8.6.9",
     "@tailwindcss/postcss": "^4",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.2.0",
@@ -54,11 +64,13 @@
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9",
     "eslint-config-next": "15.2.0",
+    "eslint-plugin-storybook": "^0.12.0",
     "jsdom": "^26.0.0",
     "lint-staged": "^15.4.3",
     "prettier": "^3.5.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^4",
+    "storybook": "^8.6.9",
+    "tailwindcss": "^4.0.17",
     "typescript": "^5",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.7"
@@ -67,5 +79,10 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }
