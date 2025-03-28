@@ -79,10 +79,5 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
   }
 }

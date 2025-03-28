@@ -10,7 +10,7 @@ import {
 import Link from "next/link";
 
 // List of all variants and weights from your component
-const variantOptions: TypographyVariant[] = [
+const VARIANT_OPTIONS: TypographyVariant[] = [
     "display/xl",
     "display/lg",
     "heading/xxl",
@@ -51,7 +51,7 @@ const variantOptions: TypographyVariant[] = [
     "inherit",
 ];
 
-const weightOptions: TypographyWeight[] = [
+const WEIGHT_OPTIONS: TypographyWeight[] = [
     "thin",
     "extralight",
     "light",
@@ -61,6 +61,49 @@ const weightOptions: TypographyWeight[] = [
     "bold",
     "extrabold",
     "black",
+];
+
+const BODY_VARIANTS = [
+    "body/3xl/semiBold",
+    "body/3xl/medium",
+    "body/2xl/bold",
+    "body/2xl",
+    "body/xl/bold",
+    "body/xl",
+    "body/lg/bold",
+    "body/lg/medium",
+    "body/lg",
+    "body/base/bold",
+    "body/base/medium",
+    "body/base",
+    "body/sm/medium",
+    "body/sm",
+    "body/xs",
+    "body/xxs",
+];
+
+const CAPTION_VARIANTS = [
+    "caption/sm/bold",
+    "caption/sm",
+    "caption/xs/bold",
+    "caption/xs/medium",
+    "caption/xs",
+];
+
+const LABEL_VARIANTS = [
+    "label/lg/medium",
+    "label/lg",
+    "label/base/medium",
+    "label/base",
+    "label/sm/medium",
+    "label/sm",
+];
+
+const CHART_VARIANTS = [
+    "chart/xs/semiBold",
+    "chart/xs",
+    "chart/xxs/bold",
+    "chart/xxs/semiBold",
 ];
 
 // Default export with meta configuration
@@ -84,13 +127,13 @@ const meta = {
                 type: { summary: "string" },
             },
             control: { type: "select" },
-            options: variantOptions,
+            options: VARIANT_OPTIONS,
             description:
                 'Applies a predefined text style such as "body/lg", "heading/xl", or "display/lg".',
         },
         weight: {
             control: { type: "select" },
-            options: weightOptions,
+            options: WEIGHT_OPTIONS,
             description: 'Font weight like "normal", "bold", "medium", etc.',
         },
         align: {
@@ -199,24 +242,7 @@ export const BodyVariants: Story = {
     },
     render: args => (
         <div className="space-y-4">
-            {[
-                "body/3xl/semiBold",
-                "body/3xl/medium",
-                "body/2xl/bold",
-                "body/2xl",
-                "body/xl/bold",
-                "body/xl",
-                "body/lg/bold",
-                "body/lg/medium",
-                "body/lg",
-                "body/base/bold",
-                "body/base/medium",
-                "body/base",
-                "body/sm/medium",
-                "body/sm",
-                "body/xs",
-                "body/xxs",
-            ].map(variant => (
+            {BODY_VARIANTS.map(variant => (
                 <Typography
                     key={variant}
                     {...args}
@@ -236,13 +262,7 @@ export const CaptionVariant: Story = {
     },
     render: args => (
         <div className="space-y-4">
-            {[
-                "caption/sm/bold",
-                "caption/sm",
-                "caption/xs/bold",
-                "caption/xs/medium",
-                "caption/xs",
-            ].map(variant => (
+            {CAPTION_VARIANTS.map(variant => (
                 <Typography
                     key={variant}
                     {...args}
@@ -262,14 +282,7 @@ export const LabelVariant: Story = {
     },
     render: args => (
         <div className="space-y-4">
-            {[
-                "label/lg/medium",
-                "label/lg",
-                "label/base/medium",
-                "label/base",
-                "label/sm/medium",
-                "label/sm",
-            ].map(variant => (
+            {LABEL_VARIANTS.map(variant => (
                 <Typography
                     key={variant}
                     {...args}
@@ -289,12 +302,7 @@ export const ChartVariant: Story = {
     },
     render: args => (
         <div className="space-y-4">
-            {[
-                "chart/xs/semiBold",
-                "chart/xs",
-                "chart/xxs/bold",
-                "chart/xxs/semiBold",
-            ].map(variant => (
+            {CHART_VARIANTS.map(variant => (
                 <Typography
                     key={variant}
                     {...args}
