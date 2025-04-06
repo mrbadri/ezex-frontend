@@ -47,10 +47,10 @@ export const typographyVariants = cva("leading-[120%]", {
 
             // Label
             "label/lg/medium": "font-medium text-lg",
-            "label/lg": "font-normal text-lg",
-            "label/base/medium": "font-medium text-base",
+            "label/lg": "font-normal text-lg", // 18
+            "label/base/medium": "font-medium text-base", //16
             "label/base": "font-normal text-base",
-            "label/sm/medium": "font-medium text-sm",
+            "label/sm/medium": "font-medium text-xxs", // 10
             "label/sm": "font-normal text-sm",
 
             // Chart
