@@ -11,23 +11,22 @@ import {
     FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { PATHS } from "@/constants/paths.constant";
 import { signInMethodsAPI } from "@/lib/axios/firebase/sign-in-methods";
+import {
+    DeliveryMethod,
+    sendConfirmationCodeAPI,
+} from "@/lib/graphql/mutations/send-confirmation-code";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { Loader } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { EMAIL_FORM_INITIAL_VALUES } from "../_constants/email-form.constant";
 import {
     emailFormSchema,
     EmailFormValues,
 } from "../_schemas/email-form.schema";
-import { useRouter } from "next/navigation";
-import {
-    DeliveryMethod,
-    sendConfirmationCodeAPI,
-} from "@/lib/graphql/mutations/send-confirmation-code";
-import { PATHS } from "@/constants/paths.constant";
-import { toast } from "sonner";
 
 const EmailForm = () => {
     const router = useRouter();
@@ -107,9 +106,9 @@ const EmailForm = () => {
                     color="primary"
                     className="mt-4 lg:mt-8"
                     disabled={isPending}
+                    isLoading={isPending}
                 >
                     Continue
-                    {isPending && <Loader className="animate-spin" />}
                 </Button>
             </form>
         </Form>

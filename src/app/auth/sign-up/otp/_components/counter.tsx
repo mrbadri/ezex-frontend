@@ -8,7 +8,6 @@ import {
 } from "@/lib/graphql/mutations/send-confirmation-code";
 import { seconds } from "@/utils/timeUtils/timeUtils";
 import { useMutation } from "@tanstack/react-query";
-import { Loader } from "lucide-react";
 import { FC, useEffect } from "react";
 import { toast } from "sonner";
 
@@ -56,10 +55,10 @@ const Counter: FC<CounterProps> = ({ recipient }) => {
             onClick={handleResendClick}
             className="mt-4 mb-16 w-full"
             size="lg"
+            isLoading={sendOTPMutation.isPending}
         >
             {isFinished && <span>Resend</span>}
             {!isFinished && <span>Resend code in {count}</span>}
-            {sendOTPMutation.isPending && <Loader className="animate-spin" />}
         </Button>
     );
 };

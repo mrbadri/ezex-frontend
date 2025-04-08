@@ -13,21 +13,20 @@ import {
 } from "@/components/ui/form";
 import PasswordInput from "@/components/ui/password-input";
 import { PATHS } from "@/constants/paths.constant";
+import { createUserAPI } from "@/lib/axios/firebase/create-user-with-email-password";
 import { useSignupStore } from "@/stores/signup/signup.store";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
+import { FirebaseError } from "firebase/app";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { PASSWORD_FORM_INITIAL_VALUES } from "../_constants/verification-images";
 import {
     passwordFormSchema,
     PasswordFormValues,
 } from "../_schemas/password-form.schema";
-import { Loader } from "lucide-react";
-import { createUserAPI } from "@/lib/axios/firebase/create-user-with-email-password";
-import { toast } from "sonner";
-import { FirebaseError } from "firebase/app";
 
 const SecurityVerificationForm = () => {
     const router = useRouter();
@@ -184,9 +183,9 @@ const SecurityVerificationForm = () => {
                         className="bg-primary-500 hover:bg-primary-600 mt-6 w-full sm:mt-8"
                         disabled={isPending}
                         color="primary"
+                        isLoading={isPending}
                     >
                         Continue
-                        {isPending && <Loader className="animate-spin" />}
                     </Button>
                     <Button
                         type="button"

@@ -1,4 +1,7 @@
+import { buttonVariants } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
+import { cn } from "@/utils/cn";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -16,6 +19,13 @@ export default function Home() {
             >
                 Welcome to EZEX Exchange!
             </Typography>
+
+            <Link
+                href="/auth/sign-in/email"
+                className={cn(buttonVariants(), "mt-10")}
+            >
+                Signup
+            </Link>
         </div>
     );
 }
