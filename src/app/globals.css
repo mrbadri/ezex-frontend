@@ -134,6 +134,34 @@
     --color-primary-900: oklch(35.59% 0.0678 164.97); /* hex: #0d4733 */
     --color-primary-950: oklch(24.88% 0.0444 167.54); /* hex: #06281d */
 
+    --color-neutral-50: oklch(0.99 0.0013 286.38); /* hex: #FCFCFD , Neutral1 */
+    --color-neutral-100: oklch(
+        0.97 0.0017 247.84
+    ); /* hex: #F4F5F6 , Neutral2  */
+    --color-neutral-200: oklch(
+        0.93 0.0058 264.53
+    ); /* hex: #E6E8EC , Neutral3 */
+    --color-neutral-300: oklch(
+        0.88 0.0111 274.88
+    ); /* hex: #D6D8E0 , Neutral4 */
+    --color-neutral-400: oklch(
+        0.77 0.0203 273.16
+    ); /* hex: #B1B5C3 , Neutral5 */
+    --color-neutral-500: oklch(
+        0.59 0.0287 268.64
+    ); /* hex: #777E90 , Neutral6 */
+    --color-neutral-600: oklch(
+        0.52 0.0361 269.42
+    ); /* hex: #61697F , Neutral7  */
+    --color-neutral-700: oklch(
+        0.35 0.0217 270.72
+    ); /* hex: #353945 , Neutral8 */
+    --color-neutral-800: oklch(0.27 0.0173 270.7); /* hex: #23262F , Neutral9 */
+    --color-neutral-900: oklch(
+        0.24 0.0119 270.87
+    ); /* hex: #1C1E24 , Neutral10 */
+    --color-neutral-950: oklch(0.21 0.008 274.55); /* hex: #18191D , back2 */
+
     --text-xxs: 0.625rem;
 }
 
