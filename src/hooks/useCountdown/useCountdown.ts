@@ -52,6 +52,7 @@ export function useCountdown({
     const countdownCallback = useCallback(() => {
         if (count === countStop) {
             stopCountdown();
+
             return;
         }
 

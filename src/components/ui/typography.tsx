@@ -373,6 +373,7 @@ const getResponsiveVariantClasses = (
         .map(([bp, variant]) => {
             if (!variant) return "";
             const key: ResponsiveVariantKey = `${bp as Breakpoint}:${variant}`;
+
             return RESPONSIVE_VARIANT_MAP[key] || "";
         })
         .join(" ");
@@ -387,6 +388,7 @@ const getResponsiveWeightClasses = (
         .map(([bp, variant]) => {
             if (!variant) return "";
             const key: ResponsiveWeightKey = `${bp as Breakpoint}:${variant}`;
+
             return RESPONSIVE_WEIGHT_MAP[key] || "";
         })
         .join(" ");

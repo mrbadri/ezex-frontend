@@ -5,11 +5,13 @@ import { useBoolean } from "./useBoolean";
 describe("useBoolean", () => {
     test("should initialize with default value", () => {
         const { result } = renderHook(() => useBoolean(true));
+
         expect(result.current.value).toBe(true);
     });
 
     test("should set value to true", () => {
         const { result } = renderHook(() => useBoolean(false));
+
         act(() => {
             result.current.setTrue();
         });
@@ -18,6 +20,7 @@ describe("useBoolean", () => {
 
     test("should set value to false", () => {
         const { result } = renderHook(() => useBoolean(true));
+
         act(() => {
             result.current.setFalse();
         });
@@ -40,6 +43,7 @@ describe("useBoolean", () => {
 
     test("should update value using setValue function", () => {
         const { result } = renderHook(() => useBoolean(false));
+
         act(() => {
             result.current.setValue(true);
         });

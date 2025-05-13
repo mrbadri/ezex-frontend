@@ -19,6 +19,7 @@ describe("useInterval()", () => {
     test("should fire the callback function (1)", () => {
         const timeout = 500;
         const callback = vitest.fn();
+
         renderHook(() => {
             useInterval(callback, timeout);
         });
@@ -30,6 +31,7 @@ describe("useInterval()", () => {
         const timeout = 500;
         const earlyTimeout = 400;
         const callback = vitest.fn();
+
         renderHook(() => {
             useInterval(callback, timeout);
         });
@@ -41,6 +43,7 @@ describe("useInterval()", () => {
         mockSetInterval();
         const timeout = 1200;
         const callback = vitest.fn();
+
         renderHook(() => {
             useInterval(callback, timeout);
         });
@@ -54,6 +57,7 @@ describe("useInterval()", () => {
         const { unmount } = renderHook(() => {
             useInterval(callback, 1200);
         });
+
         unmount();
         expect(clearInterval).toHaveBeenCalledTimes(1);
     });

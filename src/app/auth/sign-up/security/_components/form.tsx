@@ -70,21 +70,26 @@ const SecurityVerificationForm = () => {
                 },
                 onError(error) {
                     let message = "An unknown error occurred";
+
                     if (error instanceof FirebaseError) {
                         switch (error.code) {
                             case "auth/email-already-in-use":
                                 message = "This email is already in use.";
                                 break;
+
                             case "auth/invalid-email":
                                 message = "The email address is not valid.";
                                 break;
+
                             case "auth/operation-not-allowed":
                                 message =
                                     "Email/password accounts are not enabled.";
                                 break;
+
                             case "auth/weak-password":
                                 message = "The password is too weak.";
                                 break;
+
                             default:
                                 message = error.message;
                         }

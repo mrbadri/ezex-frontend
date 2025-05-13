@@ -49,8 +49,10 @@ const EmailForm = () => {
             {
                 onSuccess(data, variables) {
                     const emailExits = data.length !== 0;
+
                     if (emailExits) {
                         router.push(PATHS.SigninPasswordPage);
+
                         return;
                     }
 
@@ -63,8 +65,7 @@ const EmailForm = () => {
                             onSuccess() {
                                 toast.success("OTP sent successfully");
                                 router.push(
-                                    PATHS.SignupOTPPage +
-                                        `?email=${variables.email}`,
+                                    `${PATHS.SignupOTPPage}?email=${variables.email}`,
                                 );
                             },
                         },

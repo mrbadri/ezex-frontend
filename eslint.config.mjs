@@ -15,6 +15,38 @@ const eslintConfig = [
         "next/typescript",
         "plugin:storybook/recommended",
     ),
+    {
+        rules: {
+            "no-implicit-coercion": "error",
+            "no-negated-condition": "error",
+            "no-else-return": "error",
+            "no-shadow": "error",
+            "require-atomic-updates": "error",
+            "prefer-template": "error",
+            "no-nested-ternary": "error",
+            "no-lonely-if": "error",
+            eqeqeq: "error",
+            "padding-line-between-statements": [
+                "error",
+                { blankLine: "always", prev: "*", next: "return" },
+                {
+                    blankLine: "always",
+                    prev: ["const", "let", "var"],
+                    next: "*",
+                },
+                {
+                    blankLine: "any",
+                    prev: ["const", "let", "var"],
+                    next: ["const", "let", "var"],
+                },
+            ],
+            "lines-between-class-members": [
+                "error",
+                "always",
+                { exceptAfterSingleLine: true },
+            ],
+        },
+    },
 ];
 
 export default eslintConfig;
